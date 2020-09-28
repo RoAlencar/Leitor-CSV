@@ -26,14 +26,14 @@ public class leitorCsv {
 				model.setTelCliente(valoresEntreVirgulas[1]);
 				model.setMensagem(valoresEntreVirgulas[2]);
 				
-				String rpl = model.getMensagem();
-				rpl.replace("xxxxxxxxxx", model.getNomeCliente());
+				String nome = sms.getMensagem().replace("xxxxxxxxxx", sms.getNomeCliente());
+				sms.setMensagem(nome);
+				
 				System.out.println(model.getNomeCliente());
 				System.out.println(model.getTelCliente());
 				System.out.println(model.getMensagem());
 					
 
-				//System.out.println(valoresEntreVirgulas[0] + " " + valoresEntreVirgulas[1]);
 			}
 
 		} catch (Exception e) {
