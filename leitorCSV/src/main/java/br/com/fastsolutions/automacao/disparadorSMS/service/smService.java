@@ -1,4 +1,4 @@
-package br.com.rodrigo.estudo.leitorCSV.service;
+package br.com.fastsolutions.automacao.disparadorSMS.service;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -8,16 +8,15 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.fastsolutions.automacao.leitorCSV.model.modelSMS;
-import br.com.fastsolutions.automacao.leitorCSV.repository.modelSmsRepository;
-import br.com.rodrigo.estudo.leitorCSV.model.SMS;
-import br.com.rodrigo.estudo.leitorCSV.repository.smsDTO;
+import br.com.fastsolutions.automacao.disparadorSMS.repository.DisparadorSmsRepository;
+import br.com.rodrigo.estudo.leitorCSV.model.DisparadorSmsModel;
+
 
 @Service
 public class smService {
 	
 	@Autowired
-	modelSmsRepository msr;
+	DisparadorSmsRepository DSR;
 	String line = "";
 
 	public void salvaCsv() {
@@ -28,7 +27,7 @@ public class smService {
 					new FileReader("C:\\\\Users\\\\rodrigo.xavier\\\\Desktop\\\\Teste.csv"));
 			while ((line = br.readLine()) != null) {
 				String[] data = line.split(";");
-				modelSMS sms = new modelSMS();
+				DisparadorSmsModel sms = new DisparadorSmsModel();
 
 				sms.setNomeCliente(data[0]);
 				sms.setTelCliente(data[1]);
@@ -39,12 +38,12 @@ public class smService {
 				String nome = sms.getMensagem().replace("xxxxxxxxxx", sms.getNomeCliente());
 				sms.setMensagem(nome);
 
-				ArrayList<modelSMS> mSms = new ArrayList<modelSMS>();
+				ArrayList<DisparadorSmsModel> mSms = new ArrayList<DisparadorSmsModel>();
 				mSms.add(sms);
 
 				// msr.saveAll(mSms);
-				for (modelSMS entity : mSms) {
-					msr.saveAndFlush(entity);
+				for (DisparadorSmsModel entity : mSms) {
+					DSR.saveAndFlush(entity);
 				}
 			}
 

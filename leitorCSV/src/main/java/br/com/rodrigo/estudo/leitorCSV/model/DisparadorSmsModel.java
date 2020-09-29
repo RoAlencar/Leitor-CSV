@@ -14,7 +14,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "db_EnvioSMS")
-public class SMS {
+public class DisparadorSmsModel {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,7 +40,7 @@ public class SMS {
 
 	private Integer idCliente;
 
-	public void SMS() {
+	public void sms() {
 
 	}
 
