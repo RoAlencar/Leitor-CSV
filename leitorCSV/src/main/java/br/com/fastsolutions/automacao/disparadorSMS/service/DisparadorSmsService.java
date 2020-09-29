@@ -11,10 +11,9 @@ import org.springframework.stereotype.Service;
 import br.com.fastsolutions.automacao.disparadorSMS.model.DisparadorSmsModel;
 import br.com.fastsolutions.automacao.disparadorSMS.repository.DisparadorSmsRepository;
 
-
 @Service
 public class DisparadorSmsService {
-	
+
 	@Autowired
 	DisparadorSmsRepository DSR;
 	String line = "";
@@ -23,8 +22,7 @@ public class DisparadorSmsService {
 		long startTime = System.nanoTime();
 		try {
 			@SuppressWarnings("resource")
-			BufferedReader br = new BufferedReader(
-					new FileReader("C:\\\\Users\\\\rodrigo.xavier\\\\Desktop\\\\Teste.csv"));
+			BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Rodrigo de Alencar\\Desktop\\Teste.csv"));
 			while ((line = br.readLine()) != null) {
 				String[] data = line.split(";");
 				DisparadorSmsModel sms = new DisparadorSmsModel();

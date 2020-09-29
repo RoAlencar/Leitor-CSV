@@ -13,7 +13,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "db_EnvioSMS")
+@Table(name = "db_DisparoSMS")
 public class DisparadorSmsModel {
 
 	@Id
