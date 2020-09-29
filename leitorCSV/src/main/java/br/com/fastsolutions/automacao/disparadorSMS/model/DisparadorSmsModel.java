@@ -1,4 +1,4 @@
-package br.com.rodrigo.estudo.leitorCSV.model;
+package br.com.fastsolutions.automacao.disparadorSMS.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

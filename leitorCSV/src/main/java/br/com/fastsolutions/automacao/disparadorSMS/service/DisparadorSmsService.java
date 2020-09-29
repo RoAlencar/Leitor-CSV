@@ -8,12 +8,12 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.fastsolutions.automacao.disparadorSMS.model.DisparadorSmsModel;
 import br.com.fastsolutions.automacao.disparadorSMS.repository.DisparadorSmsRepository;
-import br.com.rodrigo.estudo.leitorCSV.model.DisparadorSmsModel;
 
 
 @Service
-public class smService {
+public class DisparadorSmsService {
 	
 	@Autowired
 	DisparadorSmsRepository DSR;
