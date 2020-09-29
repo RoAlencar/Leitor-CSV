@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.fastsolutions.automacao.disparadorSMS.service.DisparadorSmsService;
 
 @RestController
-public class Controller {
+public class DisparadorSmsController {
 
 	@Autowired
 	private DisparadorSmsService sS;
